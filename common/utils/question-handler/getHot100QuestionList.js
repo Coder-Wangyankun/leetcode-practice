@@ -1,6 +1,6 @@
 
 import { getQuestionDetail } from "./getQuestionDetail.js";
-const bodyString = "{\"query\":\"\\n    query studyPlanProgress($slug: String!, $historyId: ID) {\\n  studyPlanV2ProgressDetail(planSlug: $slug, id: $historyId) {\\n    id\\n    status\\n    weeklyTaskScheduleResettable\\n    finishedQuestionNum\\n    studyPlanDetail {\\n      questionNum\\n      planSubGroups {\\n        slug\\n        questions {\\n          titleSlug\\n          status\\n        }\\n      }\\n    }\\n  }\\n}\\n    \",\"variables\":{\"slug\":\"top-100-liked\"},\"operationName\":\"studyPlanProgress\"}"
+const bodyString = "{\"query\":\"\\n    query studyPlanPastSolved($slug: String!) {\\n  studyPlanV2Detail(planSlug: $slug) {\\n    planSubGroups {\\n      slug\\n      questions {\\n        titleSlug\\n        status\\n      }\\n    }\\n  }\\n}\\n    \",\"variables\":{\"slug\":\"top-100-liked\"},\"operationName\":\"studyPlanPastSolved\"}"
 const headers = {
   "accept": "*/*",
   "accept-language": "zh-CN,zh;q=0.9",
@@ -23,6 +23,8 @@ const headers = {
   "Referer": "https://leetcode.cn/studyplan/top-100-liked/",
   "Referrer-Policy": "strict-origin-when-cross-origin"
 }
+
+
 const initJson = {
   headers,
   body: bodyString,
@@ -32,18 +34,35 @@ const initJson = {
 export  const getHot100QuestionList = async() => {
  const res =  await fetch("https://leetcode.cn/graphql/", initJson).then(res=> res.json())
  const { data: {
-  studyPlanV2ProgressDetail: {studyPlanDetail}
+  studyPlanV2Detail
  } } = res;
- return studyPlanDetail
+ return studyPlanV2Detail
 }
-getHot100QuestionList().then(res=> {
+
+export const getTitleSlugList = async () => {
+  const res = await getHot100QuestionList();
   const {planSubGroups} = res;
-  // const slug = planSubGroups[0].slug;
-  const slug = planSubGroups[0].questions[0].titleSlug;
-  getQuestionDetail(slug).then(res=> {
-    console.log(res)
-  })
+  return planSubGroups.reduce((acc, cur)=> {
+   const list = cur.questions.map(res=> res.titleSlug);
+  //  acc.push(...list);
+    acc.push(...cur.questions.map(res=> res.titleSlug))
+    return acc
+  }, [])
+}
+const getPromiseList = async() => {
+  const titleSlugList = await getTitleSlugList();
+  return titleSlugList.map((titleSlug) =>  getQuestionDetail(titleSlug))
 
+}
 
+export  async function  getHot100QuestionListJSCode () {
+  const promiseList = await getPromiseList();
+  return await Promise.all(promiseList)
+}
 
-});
+(async function() {
+  const slugs = await getHot100QuestionListJSCode();  
+  
+  console.log(slugs)
+
+})()

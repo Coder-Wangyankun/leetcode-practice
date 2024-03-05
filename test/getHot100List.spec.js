@@ -5,8 +5,7 @@ describe('hot 100获取数据测试', ()=> {
   it('是否正确获取了hot 100合集', async()=>{
     const res = await getHot100QuestionList();
 
-    console.log(res.planSubGroups[0].questions)
-    expect(Object.keys(res)).toStrictEqual(['questionNum', 'planSubGroups'])
+    expect(Object.keys(res)).toStrictEqual(["planSubGroups",])
 
 
   })
