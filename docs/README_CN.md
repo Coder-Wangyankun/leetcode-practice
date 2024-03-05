@@ -46,7 +46,7 @@
 | git    | lts |
 
 > note: nodejs:[nodejs安装向导](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
-> 
+>
 > git:[git下载地址](https://git-scm.com/downloads)
 
 ## 安装
@@ -67,6 +67,7 @@ yarn global install leetcode-practice
 ### 二.使用fork创建你自己的leetcode-practice仓库副本 (方案 B)
 
 #### 常规方法
+
 1. 打开我们的项目地址:[leetcode-practice](https://github.com/wh131462/leetcode-practice)
 
 ![leetcode-practice-github](../resources/images/leetcode-practice-github.png)
@@ -169,9 +170,11 @@ MODE: random
 题目[14.最长公共前缀]获取成功!
 题目文件地址为:/home/wh131462/workspace/leetcode-practice/src/14.longest-common-prefix/index.js
 ```
+
 ##### [5]. 简单创建模式(交互式创建) - [`-e`/`--easy`]
 
 除了如上的使用精准的指令快速创建题目外，还可以使用简单创建模式来进行交互式创建。
+
 ```shell
 lc -e
 ```
@@ -207,14 +210,14 @@ lk -t
 workspace/leetcode-practice [dev●] » lk -d src -t 
 MODE: today
 题目[2581.统计可能的树根数目]检测结果:
-┌─────────┬──────────┬──────────┬───────────┬────────────┬───────────┐
-│ (index) │ 测试结果   │ 预期结果  │ 执行结果    │  执行用时   │ 内存占用    │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │ '未通过'  │   '3'    │ undefined │ '0.0921ms' │ '2.52 KB' │
-│    1    │ '未通过'  │   '5'    │ undefined │ '0.0119ms' │ '2.66 KB' │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-点击跳转到题目提交:https://leetcode.cn/problems/count-number-of-possible-root-nodes/
 ```
+
+| index | 测量结果 | 预期结果 | 执行结果 | 执行用时 | 内存占用 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 未通过 | '3' | undefined | 0.0921ms | 2.52 KB |
+| 1 | 通过 | '5' | undefined | 0.0119ms | 2.66 KB |
+
+> 点击跳转到题目提交:<https://leetcode.cn/problems/count-number-of-possible-root-nodes/>
 
 ##### [2]. 检查指定题解 [`-i`/`--identity` + `<identity>`]
 
@@ -228,20 +231,21 @@ lk -i 2581
 # 带空格的编号 使用双引号包裹
 lk "LCP 50"
 ```
+
 使用示例检查指定题解:
 
 ```shell
 workspace/leetcode-practice [dev●] » lk -d src 2581
 MODE: identity
 题目[2581.统计可能的树根数目]检测结果:
-┌─────────┬──────────┬──────────┬───────────┬────────────┬───────────┐
-│ (index) │ 测试结果   │ 预期结果  │ 执行结果    │  执行用时   │ 内存占用    │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │ '通过'    │   '3'    │ '3'       │ '0.1668ms' │ '2.52 KB' │
-│    1    │ '通过'    │   '5'    │ '5'       │ '0.0234ms' │ '2.66 KB' │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-点击跳转到题目提交:https://leetcode.cn/problems/count-number-of-possible-root-nodes/
 ```
+
+| index | 测量结果 | 预期结果 | 执行结果 | 执行用时 | 内存占用 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 通过 | '3' | '3' | 0.1668ms | 2.52 KB |
+| 1 | 通过 | '5' | '5' | 0.0234ms | 2.66 KB |
+
+> 点击跳转到题目提交:<https://leetcode.cn/problems/count-number-of-possible-root-nodes/>
 
 ##### [3]. 检查随机获取的题解 [`-r`/`--random`]
 
@@ -251,27 +255,29 @@ MODE: identity
 # 完整指令
 lk -r
 ```
+
 使用示例:
 
 ```shell
 workspace/leetcode-practice [dev●] » lk -r 
 MODE: random
 题目[41.缺失的第一个正数]检测结果:
-┌─────────┬──────────┬──────────┬───────────┬────────────┬───────────┐
-│ (index) │ 测试结果 │ 预期结果 │ 执行结果  │  执行用时  │ 内存占用  │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │ '未通过' │   '3'    │ undefined │ '0.0896ms' │ '2.42 KB' │
-│    1    │ '未通过' │   '2'    │ undefined │ '0.0110ms' │ '2.56 KB' │
-│    2    │ '未通过' │   '1'    │ undefined │ '0.0045ms' │ '2.56 KB' │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-点击跳转到题目提交:https://leetcode.cn/problems/first-missing-positive/
 ```
 
+| index | 测量结果 | 预期结果 | 执行结果 | 执行用时 | 内存占用 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 未通过 | '3' | undefined | 0.0896ms | 2.42 KB |
+| 1 | 未通过 | '2' | undefined | 0.0110ms | 2.56 KB |
+| 2 | 未通过 | '1' | undefined | 0.0045ms | 2.56 KB |
+
+> 点击跳转到题目提交:<https://leetcode.cn/problems/first-missing-positive/>
+>
 > 注意:在执行此指令之前请务必先执行过,`lc -r`创建了随机题目。
 
 ##### [4]. 简单模式(交互式检查) [`-e`/`--easy`]
 
 在终端中键入`lk`指令,使用参数`-e`，即可使用交互式的进行题目检查。
+
 ```shell
 # 完整指令
 lk -e
@@ -284,17 +290,17 @@ workspace/leetcode-practice [dev●] » lk -e
 ? 请选择检查问题的模式: identity
 ? 请输入题目编号: 41
 ? 是否检测当前目录[ /Users/mac-106/wh131462/workspace/leetcode-practice ]下的题目[ 41.first-missing-positive ]? Yes
-┌─────────┬──────────┬──────────┬───────────┬────────────┬───────────┐
-│ (index) │ 测试结果 │ 预期结果 │ 执行结果  │  执行用时  │ 内存占用  │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │ '未通过' │   '3'    │ undefined │ '0.0969ms' │ '2.42 KB' │
-│    1    │ '未通过' │   '2'    │ undefined │ '0.0139ms' │ '2.56 KB' │
-│    2    │ '未通过' │   '1'    │ undefined │ '0.0051ms' │ '2.56 KB' │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-点击跳转到题目提交:https://leetcode.cn/problems/first-missing-positive/
-题目[41.first-missing-positive]检查完成！
-文件地址为: /Users/mac-106/wh131462/workspace/leetcode-practice/41.first-missing-positive/index.js
 ```
+
+| index | 测量结果 | 预期结果 | 执行结果 | 执行用时 | 内存占用 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 未通过 | '3' | undefined | 0.0969ms | 2.42 KB |
+| 1 | 未通过 | '2' | undefined | 0.0139ms | 2.56 KB |
+| 2 | 未通过 | '1' | undefined | 0.0051ms | 2.56 KB |
+
+> 点击跳转到题目提交:<https://leetcode.cn/problems/first-missing-positive/>
+> 题目[41.first-missing-positive]检查完成！
+> 文件地址为: /Users/mac-106/wh131462/workspace/leetcode-practice/41.first-missing-positive/index.js
 
 #### 3.题目查找 - `lf`
 
@@ -304,10 +310,36 @@ workspace/leetcode-practice [dev●] » lk -e
 
 #### 4.通用参数
 
-##### [1]. 指定目录 - [`-d`/`-directory`]
+##### [1]. 获取或指定当前编程语言 - [`-l`/`-language` [language]]
+
+可以通过`-l`不带参数来获取当前的编程语言设定，也可以通过指定语言参数将当前cli的语言环境设定为指定的语言。
+
+```shell
+# 此参数在 lc/lk/lf 中的表现一致
+lc -l
+lk -l java
+```
+
+使用示例：
+
+```shell
+# 获取语言环境
+➜  leetcode-practice git:(dev) ✗ lc -l
+当前CLI语言环境为:javascript
+# 更改语言环境
+➜  leetcode-practice git:(dev) ✗ lc -l java
+? 请确认你要设置CLI的语言环境(如果选项匹配成功，那么按下回车确认即可) java
+设置语言环境为: java
+
+```
+
+> 注意: 在这个环境下无法执行检测测试用例。
+
+##### [2]. 指定目录 - [`-d`/`-directory`]
 
 `创建`和`检查`指令还可以使用参数`-d`来指定基于当前工作目录的相对地址作为指定目录。
 当指定目录后会在指定目录中进行创建或者检查操作。
+
 ```shell
 # 指定当前目录的子目录src作为生成目录
 lc -d src -t
@@ -326,7 +358,7 @@ MODE: today
 
 > 注意： 如果指定的目录不存在，会自动生成一个空目录进行创建。
 
-##### [2]. 检查版本号 [`-V`/`--version`]
+##### [3]. 检查版本号 [`-V`/`--version`]
 
 ```shell
 # 查看lc版本
@@ -344,13 +376,16 @@ workspace/leetcode-practice [dev●] » lc -V
 0.0.0
 ```
 
-##### [3]. 更新检测 [`-u`/`--update`]
+##### [4]. 更新检测 [`-u`/`--update`]
+
 使用`-u`或者`--update`参数可以检测当前版本是否为最新版本，如果当前版本不是最新版本，会提示用户是否进行更新.
+
 ```shell
 lk -u 
 lf -u
 lc -u
 ```
+
 ```shell
 ? 自动检测到的环境为[ project ],如果不是,请进行选择,如是,请按下回车确认. project
 开始获取npm仓库中的版本号...
@@ -365,7 +400,8 @@ github仓库的版本号获取成功!
 ```
 
 ### fork项目的使用
-##### [0]. 安装依赖
+
+#### [0]. 安装依赖
 
 在使用之前,先使用包管理工具进行依赖的安装.
 
@@ -379,16 +415,20 @@ yarn
 fork项目中的指令,使用上和脚手架CLI的使用参数是一致的,只不过需要通过`npm run`类似的包管理工具执行命令来执行脚本.
 
 > 注意:在项目中的脚本,和脚手架的唯一区别就是默认指定了`-d`参数,指向了项目根目录的`src`目录,所以所有的指令都是在src中默认执行的.
-##### [1]. 创建题解 [`lc`]
+>
+#### [1]. 创建题解 [`lc`]
 
 参数参考cli的`lc`部分: [lc](#1创建题解---lc)
 
 简单使用示例:
+
 ```shell
 # 使用yarn执行
 yarn lc 1314
 ```
+
 执行结果:
+
 ```shell
 # 会在src目录下进行生成
 > yarn lc 1314                 
@@ -400,16 +440,19 @@ MODE: identity
 ✨  Done in 1.06s.
 ```
 
-##### [2]. 检查题解 [`lk`]
+#### [2]. 检查题解 [`lk`]
 
 参数参考cli的`lk`部分: [lk](#2检查题解---lk)
 
 简单使用示例:
+
 ```shell
 # 使用yarn执行
 yarn lk 1314
 ```
+
 执行结果:
+
 ```shell
 # 会在src目录下进行检查
 > yarn lk 1314
@@ -417,23 +460,23 @@ yarn run v1.22.19
 $ node bin/lk.js -d src 1314
 MODE: identity
 题目[1314.矩阵区域和]检测结果:
-┌─────────┬──────────┬──────────────────────────────────────┬───────────┬────────────┬───────────┐
-│ (index) │ 测试结果 │               预期结果               │ 执行结果  │  执行用时  │ 内存占用  │
-├─────────┼──────────┼──────────────────────────────────────┼───────────┼────────────┼───────────┤
-│    0    │ '未通过' │ '[[12,21,16],[27,45,33],[24,39,28]]' │ undefined │ '0.1487ms' │ '2.47 KB' │
-│    1    │ '未通过' │ '[[45,45,45],[45,45,45],[45,45,45]]' │ undefined │ '0.0278ms' │ '2.61 KB' │
-└─────────┴──────────┴──────────────────────────────────────┴───────────┴────────────┴───────────┘
-点击跳转到题目提交:https://leetcode.cn/problems/matrix-block-sum/
-✨  Done in 1.13s.
 ```
 
-##### [3]. 查找题解 [`lf`]
+| index | 测量结果 | 预期结果 | 执行结果 | 执行用时 | 内存占用 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 未通过 | '[[12,21,16],[27,45,33],[24,39,28]]' | undefined | 0.1487ms | 2.47 KB |
+| 1 | 未通过 | '[[45,45,45],[45,45,45],[45,45,45]]' | undefined | 0.0278ms | 2.61 KB |
+
+> 点击跳转到题目提交:<https://leetcode.cn/problems/matrix-block-sum/>
+> ✨  Done in 1.13s.
+
+#### [3]. 查找题解 [`lf`]
 
 参数参考cli的`lf`部分: [lf](#3题目查找---lf)
 
 待开发...
 
-##### [4]. 更新 [`update`]
+#### [4]. 更新 [`update`]
 
 特定更新本地项目的脚本,会更新所有的非src目录,用以同步项目最新特性.
 

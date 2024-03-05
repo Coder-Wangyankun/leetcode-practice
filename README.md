@@ -24,19 +24,19 @@ Then, leetcode-practice will meet all your needs!
 
 The best and most flexible way to use it is to use our CLI in the terminal. You can create and check your solutions using three core commands: `lk`, `lf`, and `lc`.
 
-[Installation](#I-Global-Installation-of-CLI-(Option-A)) · [Usage](#Using-CLI)
+[Installation](#I-Global-Installation-of-CLI-(Option-A)) · [Usage](#using-cli)
 
 ### Option B: Fork (Supported)
 
 You can also use GitHub's fork feature to create a copy of our project. Then, you can directly use the built-in commands within the project to create and check solutions.
 
-[Installation](#II-Fork-the-Repository-to-Create-Your-Own-leetcode-practice-Repository-(Option-B)) · [Usage](#Using-the-Forked-Project)
+[Installation](#II-Fork-the-Repository-to-Create-Your-Own-leetcode-practice-Repository-(Option-B)) · [Usage](#using-the-forked-project)
 
 ### Option C: Plugin (Supported)
 
 You can also use our `leetcode-practice` plugin available in the plugin marketplace for interactive creation and checking of solutions. (Supported on two popular editors: `WebStorm` and `VS Code`)
 
-[Installation](#III-Install-Plugins-from-the-Editor's-Marketplace-(Option-C)) · [Usage](#Plugin-Usage)
+[Installation](#III-Install-Plugins-from-the-Editor's-Marketplace-(Option-C)) · [Usage](#plugin-usage)
 
 ## Prerequisites
 
@@ -67,6 +67,7 @@ yarn global install leetcode-practice
 ### II. Fork the Repository to Create Your Own leetcode-practice Repository (Option B)
 
 #### Regular Method
+
 1. Open our project link: [leetcode-practice](https://github.com/wh131462/leetcode-practice)
 
 ![leetcode-practice-github](resources/images/leetcode-practice-github.png)
@@ -173,6 +174,7 @@ Problem file address is: /home/wh131462/workspace/leetcode-practice/src/14.longe
 ##### [5]. Easy Creation Mode (Interactive Creation) - [`-e`/`--easy`]
 
 In addition to creating problems quickly with precise commands as mentioned above, you can also use easy creation mode for interactive creation.
+
 ```shell
 lc -e
 ```
@@ -208,14 +210,14 @@ Example of checking today's solution:
 workspace/leetcode-practice [dev●] » lk -d src -t 
 MODE: today
 Check result for problem [2581.Count Possible Trees]:
-┌─────────┬──────────┬──────────┬───────────┬────────────┬───────────┐
-│ (index) │ Test Result │ Expected Result │ Execution Result │ Execution Time │ Memory Usage │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │  'Failed'  │     '3'      │  undefined  │  '0.0921ms'  │  '2.52 KB'  │
-│    1    │  'Failed'  │     '5'      │  undefined  │  '0.0119ms'  │  '2.66 KB'  │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-Click to jump to problem submission: https://leetcode.com/problems/count-number-of-possible-root-nodes/
 ```
+
+| index | Test Result | Expected Result | Execution Result | Execution Time | Memory Usage |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 'Failed' | '3' | undefined | 0.0921ms | 2.52 KB |
+| 1 | 'Passed' | '5' | undefined | 0.0119ms | 2.66 KB |
+
+> Click to jump to problem submission: <https://leetcode.com/problems/count-number-of-possible-root-nodes/>
 
 ##### [2]. Check Specified Solution [`-i`/`--identity` + `<identity>`]
 
@@ -229,22 +231,21 @@ lk -i 2581
 # For problem numbers with spaces, use double quotation marks
 lk "LCP 50"
 ```
+
 Example of checking the specified solution:
 
 ```shell
 workspace/leetcode-practice [dev●] » lk -d src 2581
 MODE: identity
 Check result for problem [2581.Count Possible Trees]:
-┌─────────┬──────────┬
-
-──────────┬───────────┬────────────┬───────────┐
-│ (index) │ Test Result │ Expected Result │ Execution Result │ Execution Time │ Memory Usage │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │  'Passed'  │     '3'      │     '3'     │  '0.1668ms'  │  '2.52 KB'  │
-│    1    │  'Passed'  │     '5'      │     '5'     │  '0.0234ms'  │  '2.66 KB'  │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-Click to jump to problem submission: https://leetcode.com/problems/count-number-of-possible-root-nodes/
 ```
+
+| index | Test Result | Expected Result | Execution Result | Execution Time | Memory Usage |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 'Passed' | '3' | '3' | 0.1668ms | 2.52 KB |
+| 1 | 'Passed' | '5' | '5' | 0.0234ms | 2.66 KB |
+
+> Click to jump to problem submission: <https://leetcode.com/problems/count-number-of-possible-root-nodes/>
 
 ##### [3]. Check Randomly Obtained Solution [`-r`/`--random`]
 
@@ -254,27 +255,29 @@ Type `lk` followed by the `-r` parameter in the terminal to check the previously
 # Full command
 lk -r
 ```
+
 Example of checking a randomly obtained solution:
 
 ```shell
 workspace/leetcode-practice [dev●] » lk -r 
 MODE: random
 Check result for problem [41.First Missing Positive]:
-┌─────────┬──────────┬──────────┬───────────┬────────────┬───────────┐
-│ (index) │ Test Result │ Expected Result │ Execution Result │ Execution Time │ Memory Usage │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │  'Failed'  │     '3'      │  undefined  │  '0.0896ms'  │  '2.42 KB'  │
-│    1    │  'Failed'  │     '2'      │  undefined  │  '0.0110ms'  │  '2.56 KB'  │
-│    2    │  'Failed'  │     '1'      │  undefined  │  '0.0045ms'  │  '2.56 KB'  │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-Click to jump to problem submission: https://leetcode.com/problems/first-missing-positive/
 ```
 
+| index | Test Result | Expected Result | Execution Result | Execution Time | Memory Usage |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 'Failed' | '3' | undefined | 0.0896ms | 2.42 KB |
+| 1 | 'Failed' | '2' | undefined | 0.0110ms | 2.56 KB |
+| 2 | 'Failed' | '1' | undefined | 0.0045ms | 2.56 KB |
+
+> Click to jump to problem submission: <https://leetcode.com/problems/first-missing-positive/>
+>
 > Note: Ensure that `lc -r` has been executed before this command to create a random problem.
 
 ##### [4]. Easy Mode (Interactive Checking) [`-e`/`--easy`]
 
 Type `lk` followed by the `-e` parameter in the terminal to use interactive mode for checking the problem.
+
 ```shell
 # Full command
 lk -e
@@ -287,17 +290,17 @@ workspace/leetcode-practice [dev●] » lk -e
 ? Select the mode of problem checking: identity
 ? Enter the problem number: 41
 ? Do you want to check the problem [ 41.first-missing-positive ] in the current directory [ /Users/mac-106/wh131462/workspace/leetcode-practice ]? Yes
-┌─────────┬──────────┬──────────┬───────────┬────────────┬───────────┐
-│ (index) │ Test Result │ Expected Result │ Execution Result │ Execution Time │ Memory Usage │
-├─────────┼──────────┼──────────┼───────────┼────────────┼───────────┤
-│    0    │  'Failed'  │     '3'      │  undefined  │  '0.0969ms'  │  '2.42 KB'  │
-│    1    │  'Failed'  │     '2'      │  undefined  │  '0.0139ms'  │  '2.56 KB'  │
-│    2    │  'Failed'  │     '1'      │  undefined  │  '0.0051ms'  │  '2.56 KB'  │
-└─────────┴──────────┴──────────┴───────────┴────────────┴───────────┘
-Click to jump to problem submission: https://leetcode.com/problems/first-missing-positive/
-Problem [41.first-missing-positive] checked!
-File address is: /Users/mac-106/wh131462/workspace/leetcode-practice/41.first-missing-positive/index.js
 ```
+
+| index | Test Result | Expected Result | Execution Result | Execution Time | Memory Usage |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 'Failed' | '3' | undefined | 0.0969ms | 2.42 KB |
+| 1 | 'Failed' | '2' | undefined | 0.0139ms | 2.56 KB |
+| 2 | 'Failed' | '1' | undefined | 0.0051ms | 2.56 KB |
+
+> Click to jump to problem submission: <https://leetcode.com/problems/first-missing-positive/>
+> Problem [41.first-missing-positive] checked!
+> File address is: /Users/mac-106/wh131462/workspace/leetcode-practice/41.first-missing-positive/index.js
 
 #### 3. Problem Lookup - `lf`
 
@@ -307,10 +310,35 @@ To be developed...
 
 #### 4. Common Parameters
 
-##### [1]. Specify Directory - [`-d`/`-directory`]
+##### [1]. Get or specify the current programming language - [-l/-language [language]]
+
+You can use -l without arguments to get the current programming language setting, or you can specify the language parameter to set the language environment of the current CLI to the specified language.
+
+```shell
+# This parameter behaves consistently in lc/lk/lf
+lc -l
+lk -l java
+```
+
+Usage example:
+
+```shell
+# Get language environment
+➜  leetcode-practice git:(dev) ✗ lc -l
+Current CLI language environment is: javascript
+# Change language environment
+➜  leetcode-practice git:(dev) ✗ lc -l java
+? Please confirm the language environment you want to set for the CLI (Press Enter to confirm if the option matches) java
+Setting language environment to: java
+```
+
+Note: Unable to execute test cases in this environment.
+
+##### [2]. Specify Directory - [`-d`/`-directory`]
 
 The `create` and `check` commands can also use the `-d` parameter to specify a relative address based on the current working directory as the specified directory.
 When specifying a directory, the operation will be performed in that directory.
+
 ```shell
 # Use the src directory as the generation directory
 lc -d src -t
@@ -329,7 +357,7 @@ Problem file address is: /home/wh131462/workspace/leetcode-practice/src/src/2867
 
 > Note: If the specified directory does not exist, an empty directory will be created.
 
-##### [2]. Check Version [`-V`/`--version`]
+##### [3]. Check Version [`-V`/`--version`]
 
 ```shell
 # Check lc version
@@ -349,14 +377,16 @@ workspace/leetcode-practice [dev●] » lc -V
 0.0.0
 ```
 
-##### [3]. Update Check [`-u`/`--update`]
+##### [4]. Update Check [`-u`/`--update`]
 
 Using the `-u` or `--update` parameter, you can check whether the current version is the latest version. If the current version is not the latest version, you will be prompted whether to update.
+
 ```shell
 lk -u 
 lf -u
 lc -u
 ```
+
 ```shell
 ? Automatically detected environment is [ project ], if not, please make a selection, if yes, please press Enter to confirm. project
 Start getting version number in npm repository...
@@ -372,7 +402,7 @@ Update completed~Enjoy your use~
 
 ### Using the Forked Project
 
-##### [0]. Dependency Installation
+#### [0]. Dependency Installation
 
 Before using, install dependencies using a package manager.
 
@@ -387,16 +417,19 @@ The commands in the forked project are the same as those in the CLI usage parame
 
 > Note: The only difference between the scripts in the project and the scaffolding is that the `-d` parameter is specified by default, pointing to the `src` directory at the root of the project, so all commands are executed by default in `src`.
 
-##### [1]. Create Solution [`lc`]
+#### [1]. Create Solution [`lc`]
 
-Refer to the `lc` part of the CLI for parameters: [lc](#1-Creating-Solutions---lc)
+Refer to the `lc` part of the CLI for parameters: [lc](#1-creating-solutions---lc)
 
 Simple usage example:
+
 ```shell
 # Execute using yarn
 yarn lc 1314
 ```
+
 Execution result:
+
 ```shell
 # Generated in the src directory
 > yarn lc 1314                 
@@ -408,16 +441,19 @@ Problem file address is:/Users/mac-106/wh131462/workspace/leetcode-practice/src/
 ✨  Done in 1.06s.
 ```
 
-##### [2]. Check Solution [`lk`]
+#### [2]. Check Solution [`lk`]
 
-Refer to the `lk` part of the CLI for parameters: [lk](#2-Checking-Solutions---lk)
+Refer to the `lk` part of the CLI for parameters: [lk](#2-checking-solutions---lk)
 
 Simple usage example:
+
 ```shell
 # Execute using yarn
 yarn lk 1314
 ```
+
 Execution result:
+
 ```shell
 # Checked in the src directory
 > yarn lk 1314
@@ -425,23 +461,23 @@ yarn run v1.22.19
 $ node bin/lk.js -d src 1314
 MODE: identity
 Check result for problem [1314.Matrix Block Sum]:
-┌─────────┬──────────┬──────────────────────────────────────┬───────────┬────────────┬───────────┐
-│ (index) │ Test Result │               Expected Result               │ Execution Result │ Execution Time │ Memory Usage │
-├─────────┼──────────┼──────────────────────────────────────┼───────────┼────────────┼───────────┤
-│    0    │  'Failed'  │ '[[12,21,16],[27,45,33],[24,39,28]]' │ undefined │ '0.1487ms' │ '2.47 KB'  │
-│    1    │  'Failed'  │ '[[45,45,45],[45,45,45],[45,45,45]]' │ undefined │ '0.0278ms' │ '2.61 KB'  │
-└─────────┴──────────┴──────────────────────────────────────┴───────────┴────────────┴───────────┘
-Click to jump to problem submission: https://leetcode.com/problems/matrix-block-sum/
-✨  Done in 1.13s.
 ```
 
-##### [3]. Look Up Solutions [`lf`]
+| index | Test Result | Expected Result | Execution Result | Execution Time | Memory Usage |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 'Failed' | '[[12,21,16],[27,45,33],[24,39,28]]' | undefined | 0.1487ms | 2.47 KB |
+| 1 | 'Failed' | '[[45,45,45],[45,45,45],[45,45,45]]' | undefined | 0.0278ms | 2.61 KB |
 
-Refer to the `lf` part of the CLI for parameters: [lf](#3-Problem-Lookup---lf)
+> Click to jump to problem submission: <https://leetcode.com/problems/matrix-block-sum/>
+> ✨  Done in 1.13s.
+
+#### [3]. Look Up Solutions [`lf`]
+
+Refer to the `lf` part of the CLI for parameters: [lf](#3-problem-lookup---lf)
 
 To be developed...
 
-##### [4]. Update [`update`]
+#### [4]. Update [`update`]
 
 This is a special script to update the local project, which updates all non-src directories to synchronize with the latest features of the project.
 
