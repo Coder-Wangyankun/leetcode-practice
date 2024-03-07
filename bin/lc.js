@@ -7,20 +7,17 @@ import {aim} from "#resources/text/aim.js";
 import {referMode} from "#common/utils/create-check/refer-mode.js";
 import {getArgs} from "#common/utils/create-check/get-args.js";
 import {getQuestionToday} from "#common/utils/question-getter/getQuestionToday.js";
-import {createQuestion} from "#common/utils/question-handler/createQuestion.js";
 import path from "path";
-import {getQuestionFileName} from "#common/utils/question-handler/getQuestionFileName.js";
-import {createQuestionCopy} from "#common/utils/question-handler/createQuestionCopy.js";
+
 import {getQuestionRandom} from "#common/utils/question-getter/getQuestionRandom.js";
-import {getQuestionById} from "#common/utils/question-getter/getQuestionById.js";
-import {setQuestion} from "#common/utils/store/controller/question.js";
-import {getQuestionChineseName} from "#common/utils/question-handler/getQuestionChineseName.js";
+
 import {easyCreateView} from "#common/view/create.view.js";
 import {description} from "#resources/text/description.js";
 import {easyUpdateView} from "#common/view/update.view.js";
 import {getQuestionLanguage} from "#common/utils/question-handler/questionLanguage.js";
 import {easyLanguageView} from "#common/view/language.view.js";
 import {DefaultVer} from "#common/constants/question.const.js";
+import { create, createQuestionById } from "#common/utils/create-check/createUtil.js";
 
 const version = process.env.VERSION??DefaultVer;
 program
@@ -71,45 +68,24 @@ if(cmdOpts.update){
     process.exit(0);
 }
 // 创建
-const create = (mode,question)=>{
-    console.log(`MODE: ${mode}`);
-    return new Promise(resolve=>{
-        setQuestion(mode,question);
-        const questionDir = path.join(baseDir,getQuestionFileName(question))
-        createQuestion(question,questionDir).then(async (path)=>{
-            if(!path)path = await createQuestionCopy(question,questionDir);
-            console.log(`题目[${getQuestionChineseName(question)}]获取成功!\n题目文件地址为:${path}`)
-            resolve(true)
-        })
-    })
-}
+
 // 模式对应的action
-const callModeAction = {
+export const callModeAction = {
     'today': () => {
         getQuestionToday().then(question=>{
-            create("today",question).then(()=>{
+            create("today",question, baseDir).then(()=>{
                 process.exit(0)
             });
         })
     },
     'random': () => {
         getQuestionRandom().then(question=>{
-            create("random",question).then(()=>{
+            create("random",question, baseDir).then(()=>{
                 process.exit(0)
             });
         })
     },
-    'identity': (id) => {
-        getQuestionById(id).then(question=>{
-            if(!question?.id) {
-                console.log(`指定编号: [ ${id} ] 题目不存在.`)
-                process.exit(0)
-            }
-            create("identity",question).then(()=>{
-                process.exit(0)
-            });
-        })
-    },
+    'identity':(id)=> createQuestionById(id, baseDir),
 }
 // 获取模式和参数
 const mode = referMode(cmdArgs, cmdOpts);

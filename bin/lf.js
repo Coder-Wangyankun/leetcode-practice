@@ -45,4 +45,5 @@ if (cmdOpts.update) {
 }
 // 进入视图操作
 await easyFinderView();
+
 process.exit(0);
