@@ -1,5 +1,7 @@
 
-import { getQuestionDetail } from "./getQuestionDetail.js";
+
+import { createQuestionByTitleSlug } from "../create-check/createUtil.js";
+import path from "path";
 const bodyString = "{\"query\":\"\\n    query studyPlanPastSolved($slug: String!) {\\n  studyPlanV2Detail(planSlug: $slug) {\\n    planSubGroups {\\n      slug\\n      questions {\\n        titleSlug\\n        status\\n      }\\n    }\\n  }\\n}\\n    \",\"variables\":{\"slug\":\"top-100-liked\"},\"operationName\":\"studyPlanPastSolved\"}"
 const headers = {
   "content-type": "application/json",
@@ -32,11 +34,14 @@ export const getTitleSlugList = async () => {
 }
 const getPromiseList = async() => {
   const titleSlugList = await getTitleSlugList();
-  return titleSlugList.map((titleSlug) =>  getQuestionDetail(titleSlug))
+  const dir = path.join(process.cwd(), 'hot100')
+  return titleSlugList.map((titleSlug) =>  createQuestionByTitleSlug(titleSlug,dir))
 
 }
 
 export  async function  getHot100QuestionListJSCode () {
   const promiseList = await getPromiseList();
+  // await promiseList[1]
+
   return await Promise.all(promiseList)
 }
